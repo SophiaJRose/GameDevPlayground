@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6iq4wxjdllm1"]
+[gd_scene load_steps=18 format=3 uid="uid://b6iq4wxjdllm1"]
 
-[ext_resource type="PackedScene" uid="uid://b35iwnpg1287j" path="res://TemplateScenes/player.tscn" id="1_b4p52"]
 [ext_resource type="Texture2D" uid="uid://cn5ylhedxadh2" path="res://assets/PurpleWall1x1.png" id="1_mknjt"]
+[ext_resource type="PackedScene" uid="uid://doec8577j2rj" path="res://TemplateScenes/third_person_player.tscn" id="2_lchsx"]
+[ext_resource type="PackedScene" uid="uid://sf7ul868ktt1" path="res://TemplateScenes/fixed_camera_area.tscn" id="3_o8vd5"]
+[ext_resource type="PackedScene" uid="uid://bn676luyq0bfb" path="res://TemplateScenes/fixed_cam_pos_area.tscn" id="4_n5yla"]
+[ext_resource type="PackedScene" uid="uid://dk0u7jh6q2spg" path="res://TemplateScenes/fixed_persp_cam_area.tscn" id="6_ourxm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_npx5x"]
 size = Vector3(100, 0.1, 100)
@@ -16,6 +19,39 @@ lightmap_size_hint = Vector2i(1004, 506)
 material = SubResource("StandardMaterial3D_y843l")
 size = Vector3(100, 0.1, 100)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ayth"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjcc7"]
+transparency = 1
+albedo_color = Color(0.752941, 0.25098, 0.25098, 0.752941)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ibn8h"]
+material = SubResource("StandardMaterial3D_xjcc7")
+size = Vector3(10, 0, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yje3e"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55v0t"]
+transparency = 1
+albedo_color = Color(0.25098, 0.752941, 0.25098, 0.752941)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qwc6j"]
+material = SubResource("StandardMaterial3D_55v0t")
+size = Vector3(10, 0, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvr72"]
+size = Vector3(10, 10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lab4g"]
+transparency = 1
+albedo_color = Color(0.25098, 0.25098, 0.752941, 0.752941)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lh4xk"]
+material = SubResource("StandardMaterial3D_lab4g")
+size = Vector3(10, 0, 10)
+
 [node name="Level" type="Node3D"]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -26,7 +62,54 @@ shape = SubResource("BoxShape3D_npx5x")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
 mesh = SubResource("BoxMesh_83xlr")
 
-[node name="Player" parent="." instance=ExtResource("1_b4p52")]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, 0.5, -0.5, 50, 20, -50)
+
+[node name="ThirdPersonPlayer" parent="." instance=ExtResource("2_lchsx")]
+
+[node name="FixedCameraArea" parent="." instance=ExtResource("3_o8vd5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 5.05, -12.5)
+override_cooldown = nan
+
+[node name="FixedCameraCollision" parent="FixedCameraArea" index="0"]
+shape = SubResource("BoxShape3D_0ayth")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FixedCameraArea/FixedCameraCollision" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.95, 0)
+mesh = SubResource("BoxMesh_ibn8h")
+
+[node name="CameraPoint" parent="FixedCameraArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 5, 3)
+
+[node name="FixedCamPosArea" parent="." instance=ExtResource("4_n5yla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.05, -12.5)
+override_cooldown = nan
+
+[node name="FixedCamPosCollision" parent="FixedCamPosArea" index="0"]
+shape = SubResource("BoxShape3D_yje3e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FixedCamPosArea/FixedCamPosCollision" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.95, 0)
+mesh = SubResource("BoxMesh_qwc6j")
+
+[node name="CameraPoint" parent="FixedCamPosArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 2.5, 0)
+
+[node name="FixedPerspCamArea" parent="." instance=ExtResource("6_ourxm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 5.05, -12.5)
+camera_dist_levels = [10.0, 12.5, 15.0]
+override_cooldown = nan
+
+[node name="FixedPerspCamCollision" parent="FixedPerspCamArea" index="0"]
+shape = SubResource("BoxShape3D_cvr72")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FixedPerspCamArea/FixedPerspCamCollision" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.95, 0)
+mesh = SubResource("BoxMesh_lh4xk")
+
+[node name="CameraAngle" parent="FixedPerspCamArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0)
+
+[editable path="FixedCameraArea"]
+[editable path="FixedCamPosArea"]
+[editable path="FixedPerspCamArea"]

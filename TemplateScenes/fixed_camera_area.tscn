@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://sf7ul868ktt1"]
+
+[ext_resource type="Script" path="res://TemplateScenes/fixed_camera_area.gd" id="1_5drba"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vawi"]
+
+[node name="FixedCameraArea" type="Area3D" groups=["FixedCameraArea"]]
+script = ExtResource("1_5drba")
+
+[node name="FixedCameraCollision" type="CollisionShape3D" parent="." groups=["FixedCameraArea"]]
+shape = SubResource("BoxShape3D_2vawi")
+
+[node name="CameraPoint" type="Node3D" parent="." groups=["FixedCameraArea"]]

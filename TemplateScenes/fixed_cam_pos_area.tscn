@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn676luyq0bfb"]
+
+[ext_resource type="Script" path="res://TemplateScenes/fixed_cam_pos_area.gd" id="1_pggus"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ugq8"]
+
+[node name="FixedCamPosArea" type="Area3D" groups=["FixedCamPosArea"]]
+script = ExtResource("1_pggus")
+override_cooldown = nan
+
+[node name="FixedCamPosCollision" type="CollisionShape3D" parent="." groups=["FixedCamPosArea"]]
+shape = SubResource("BoxShape3D_3ugq8")
+
+[node name="CameraPoint" type="Node3D" parent="." groups=["FixedCamPosArea"]]

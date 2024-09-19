@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk0u7jh6q2spg"]
+
+[ext_resource type="Script" path="res://TemplateScenes/fixed_persp_cam_area.gd" id="1_b14la"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l00me"]
+
+[node name="FixedPerspCamArea" type="Area3D" groups=["FixedPerspCamArea"]]
+script = ExtResource("1_b14la")
+override_cooldown = nan
+
+[node name="FixedPerspCamCollision" type="CollisionShape3D" parent="." groups=["FixedPerspCamArea"]]
+shape = SubResource("BoxShape3D_l00me")
+
+[node name="CameraAngle" type="Node3D" parent="." groups=["FixedPerspCamArea"]]
+
+[node name="CameraTarget" type="Node3D" parent="." groups=["FixedPerspCamArea"]]
