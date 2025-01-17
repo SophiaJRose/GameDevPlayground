@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cguyfry3liiwc"]
+
+[ext_resource type="Texture2D" uid="uid://cn5ylhedxadh2" path="res://assets/PurpleWall1x1.png" id="1_21a63"]
+[ext_resource type="PackedScene" uid="uid://mp28w6mqcecw" path="res://TemplateScenes/first_person_player.tscn" id="2_y0v0r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_npx5x"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y843l"]
+albedo_texture = ExtResource("1_21a63")
+uv1_scale = Vector3(300, 200, 1)
+uv2_scale = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_83xlr"]
+lightmap_size_hint = Vector2i(1004, 506)
+material = SubResource("StandardMaterial3D_y843l")
+size = Vector3(100, 0.1, 100)
+
+[node name="Level" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_npx5x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_83xlr")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, 0.5, -0.5, 50, 20, -50)
+
+[node name="FirstPersonPlayer" parent="." instance=ExtResource("2_y0v0r")]
