@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfgfpingrkju8"]
+
+[ext_resource type="Script" path="res://TemplateScenes/2DSidescroller/sidescroller_player.gd" id="1_irhbd"]
+[ext_resource type="Texture2D" uid="uid://8f6vmgiuwxir" path="res://assets/2D/player00.png" id="1_vmpur"]
+[ext_resource type="Texture2D" uid="uid://cb2qaduv78ene" path="res://assets/2D/player_01.png" id="2_67xps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbj3"]
+size = Vector2(24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ovw0p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vmpur")
+}],
+"loop": true,
+"name": &"Stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_67xps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vmpur")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[node name="SidescrollerPlayer" type="CharacterBody2D"]
+script = ExtResource("1_irhbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rkbj3")
+
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ovw0p")
+animation = &"Walk"
