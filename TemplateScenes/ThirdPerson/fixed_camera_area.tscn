@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://sf7ul868ktt1"]
 
-[ext_resource type="Script" path="res://TemplateScenes/fixed_camera_area.gd" id="1_5drba"]
+[ext_resource type="Script" path="res://TemplateScenes/ThirdPerson/fixed_camera_area.gd" id="1_5drba"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2vawi"]
 

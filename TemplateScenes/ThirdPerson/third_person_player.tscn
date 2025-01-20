@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://doec8577j2rj"]
 
-[ext_resource type="Script" path="res://TemplateScenes/third_person_player.gd" id="1_skcew"]
+[ext_resource type="Script" path="res://TemplateScenes/ThirdPerson/third_person_player.gd" id="1_skcew"]
 [ext_resource type="Texture2D" uid="uid://byudf83061i6" path="res://assets/CylinderFrontBack.png" id="2_6c0qo"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_66d7a"]

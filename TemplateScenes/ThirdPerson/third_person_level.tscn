@@ -1,10 +1,10 @@
 [gd_scene load_steps=18 format=3 uid="uid://b6iq4wxjdllm1"]
 
 [ext_resource type="Texture2D" uid="uid://cn5ylhedxadh2" path="res://assets/PurpleWall1x1.png" id="1_mknjt"]
-[ext_resource type="PackedScene" uid="uid://doec8577j2rj" path="res://TemplateScenes/third_person_player.tscn" id="2_lchsx"]
-[ext_resource type="PackedScene" uid="uid://sf7ul868ktt1" path="res://TemplateScenes/fixed_camera_area.tscn" id="3_o8vd5"]
-[ext_resource type="PackedScene" uid="uid://bn676luyq0bfb" path="res://TemplateScenes/fixed_cam_pos_area.tscn" id="4_n5yla"]
-[ext_resource type="PackedScene" uid="uid://dk0u7jh6q2spg" path="res://TemplateScenes/fixed_persp_cam_area.tscn" id="6_ourxm"]
+[ext_resource type="PackedScene" uid="uid://doec8577j2rj" path="res://TemplateScenes/ThirdPerson/third_person_player.tscn" id="2_lchsx"]
+[ext_resource type="PackedScene" uid="uid://sf7ul868ktt1" path="res://TemplateScenes/ThirdPerson/fixed_camera_area.tscn" id="3_o8vd5"]
+[ext_resource type="PackedScene" uid="uid://bn676luyq0bfb" path="res://TemplateScenes/ThirdPerson/fixed_cam_pos_area.tscn" id="4_n5yla"]
+[ext_resource type="PackedScene" uid="uid://dk0u7jh6q2spg" path="res://TemplateScenes/ThirdPerson/fixed_persp_cam_area.tscn" id="6_ourxm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_npx5x"]
 size = Vector3(100, 0.1, 100)
