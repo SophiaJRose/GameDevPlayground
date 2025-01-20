@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cn5ylhedxadh2"
-path.s3tc="res://.godot/imported/PurpleWall1x1.png-a8361705ba9eda0b1bb9a1292c9b2041.s3tc.ctex"
+path.s3tc="res://.godot/imported/PurpleWall1x1.png-94bd8601c33df613b1fe11c3ad192688.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/PurpleWall1x1.png"
-dest_files=["res://.godot/imported/PurpleWall1x1.png-a8361705ba9eda0b1bb9a1292c9b2041.s3tc.ctex"]
+source_file="res://assets/3D/PurpleWall1x1.png"
+dest_files=["res://.godot/imported/PurpleWall1x1.png-94bd8601c33df613b1fe11c3ad192688.s3tc.ctex"]
 
 [params]
 

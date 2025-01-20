@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byudf83061i6"
-path.s3tc="res://.godot/imported/CylinderFrontBack.png-d6f2e15f2d7b8c2e626df4ff66fdfd4c.s3tc.ctex"
+path.s3tc="res://.godot/imported/CylinderFrontBack.png-f094515105fa28bc22ad04b5c07b8754.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/CylinderFrontBack.png"
-dest_files=["res://.godot/imported/CylinderFrontBack.png-d6f2e15f2d7b8c2e626df4ff66fdfd4c.s3tc.ctex"]
+source_file="res://assets/3D/CylinderFrontBack.png"
+dest_files=["res://.godot/imported/CylinderFrontBack.png-f094515105fa28bc22ad04b5c07b8754.s3tc.ctex"]
 
 [params]
 
