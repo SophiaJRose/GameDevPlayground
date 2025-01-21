@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://win3j1s6nawp"]
+
+[ext_resource type="Script" path="res://TemplateScenes/2DSidescroller/sidescroller_camera.gd" id="1_xn8ui"]
+
+[node name="SidescrollerCamera" type="Camera2D"]
+script = ExtResource("1_xn8ui")
+minX = nan
+maxX = nan
+minY = nan
+maxY = nan

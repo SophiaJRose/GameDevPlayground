@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GameDevPlayground"
-run/main_scene="res://TemplateScenes/FirstPerson/first_person_level.tscn"
+run/main_scene="res://TemplateScenes/2DSidescroller/sidescroller_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -36,6 +36,10 @@ version_control/autoload_on_startup=true
 [filesystem]
 
 import/fbx/enabled=false
+
+[global_group]
+
+player=""
 
 [input]
 
