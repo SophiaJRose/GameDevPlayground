@@ -1,0 +1,92 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccu5v0yqxcy5l"]
+
+[ext_resource type="Script" path="res://UI/pause_menu.gd" id="1_jytsg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wy2n3"]
+content_margin_left = 24.0
+content_margin_top = 24.0
+content_margin_right = 24.0
+content_margin_bottom = 24.0
+bg_color = Color(0.176471, 0.176471, 0.176471, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_jvhgv"]
+font_size = 28
+
+[node name="PauseMenu" type="PanelContainer"]
+process_mode = 3
+visible = false
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.95
+anchor_bottom = 0.95
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wy2n3")
+script = ExtResource("1_jytsg")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="MenuLabel" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Menu"
+label_settings = SubResource("LabelSettings_jvhgv")
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../LevelTabs/Templates")
+text = "Resume"
+
+[node name="LevelTabs" type="TabContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+current_tab = 0
+
+[node name="Templates" type="VBoxContainer" parent="VBox/LevelTabs"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../../ResumeButton")
+focus_neighbor_bottom = NodePath("Third-Person")
+theme_override_constants/separation = 16
+metadata/_tab_index = 0
+
+[node name="Third-Person" type="Button" parent="VBox/LevelTabs/Templates"]
+layout_mode = 2
+focus_neighbor_top = NodePath("..")
+focus_neighbor_bottom = NodePath("../First-Person")
+text = "Third-Person 3D"
+
+[node name="First-Person" type="Button" parent="VBox/LevelTabs/Templates"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../Third-Person")
+focus_neighbor_bottom = NodePath("../Sidescroller")
+text = "First-Person 3D"
+
+[node name="Sidescroller" type="Button" parent="VBox/LevelTabs/Templates"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../First-Person")
+focus_neighbor_bottom = NodePath("../../../QuitButton")
+text = "2D Sidescroller"
+
+[node name="QuitButton" type="Button" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_neighbor_top = NodePath("../LevelTabs/Templates/Sidescroller")
+focus_neighbor_bottom = NodePath("../ResumeButton")
+text = "Quit
+"
+
+[connection signal="pressed" from="VBox/ResumeButton" to="." method="unpause"]
+[connection signal="pressed" from="VBox/LevelTabs/Templates/Third-Person" to="." method="change_level" binds= ["res://TemplateScenes/ThirdPerson/third_person_level.tscn"]]
+[connection signal="pressed" from="VBox/LevelTabs/Templates/First-Person" to="." method="change_level" binds= ["res://TemplateScenes/FirstPerson/first_person_level.tscn"]]
+[connection signal="pressed" from="VBox/LevelTabs/Templates/Sidescroller" to="." method="change_level" binds= ["res://TemplateScenes/2DSidescroller/sidescroller_level.tscn"]]
+[connection signal="pressed" from="VBox/QuitButton" to="." method="quit"]
