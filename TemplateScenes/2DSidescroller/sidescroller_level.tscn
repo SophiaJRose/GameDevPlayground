@@ -7,7 +7,7 @@
 
 [node name="Root" type="Node"]
 
-[node name="Level" type="Node2D" parent="."]
+[node name="Level" type="Node2D" parent="." groups=["Level"]]
 
 [node name="Background" type="TileMapLayer" parent="Level"]
 modulate = Color(0.501407, 0.501406, 0.501406, 1)

@@ -4,7 +4,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_33ixm"]
 
-[node name="FirstPersonPlayer" type="CharacterBody3D"]
+[node name="FirstPersonPlayer" type="CharacterBody3D" groups=["Player"]]
 script = ExtResource("1_cvqro")
 
 [node name="CollisionCylinder" type="CollisionShape3D" parent="."]

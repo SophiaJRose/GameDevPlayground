@@ -29,7 +29,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SidescrollerPlayer" type="CharacterBody2D" groups=["player"]]
+[node name="SidescrollerPlayer" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_irhbd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

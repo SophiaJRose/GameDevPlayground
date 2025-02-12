@@ -77,6 +77,12 @@ focus_neighbor_top = NodePath("../First-Person")
 focus_neighbor_bottom = NodePath("../../../QuitButton")
 text = "2D Sidescroller"
 
+[node name="MultiplayerSidescroller" type="Button" parent="VBox/LevelTabs/Templates"]
+layout_mode = 2
+focus_neighbor_top = NodePath("../First-Person")
+focus_neighbor_bottom = NodePath("../../../QuitButton")
+text = "Multiplayer 2D Sidescroller"
+
 [node name="QuitButton" type="Button" parent="VBox"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -89,4 +95,5 @@ text = "Quit
 [connection signal="pressed" from="VBox/LevelTabs/Templates/Third-Person" to="." method="change_level" binds= ["res://TemplateScenes/ThirdPerson/third_person_level.tscn"]]
 [connection signal="pressed" from="VBox/LevelTabs/Templates/First-Person" to="." method="change_level" binds= ["res://TemplateScenes/FirstPerson/first_person_level.tscn"]]
 [connection signal="pressed" from="VBox/LevelTabs/Templates/Sidescroller" to="." method="change_level" binds= ["res://TemplateScenes/2DSidescroller/sidescroller_level.tscn"]]
+[connection signal="pressed" from="VBox/LevelTabs/Templates/MultiplayerSidescroller" to="." method="change_level" binds= ["res://TemplateScenes/2DSidescroller/multiplayer_level.tscn"]]
 [connection signal="pressed" from="VBox/QuitButton" to="." method="quit"]

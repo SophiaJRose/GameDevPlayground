@@ -19,7 +19,7 @@ size = Vector3(100, 0.1, 100)
 
 [node name="Root" type="Node"]
 
-[node name="Level" type="Node3D" parent="."]
+[node name="Level" type="Node3D" parent="." groups=["Level"]]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level"]
 

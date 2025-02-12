@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djwwgo44bn011"]
+
+[ext_resource type="Script" path="res://TemplateScenes/controller_manager.gd" id="1_s3q8x"]
+
+[node name="ControllerManager" type="Node"]
+script = ExtResource("1_s3q8x")
